@@ -34,7 +34,6 @@ parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval
 parser.add_argument("--checkpoint_dir", type=str, default="checkpoints", help="directory where model checkpoints are saved")
 parser.add_argument("--use_cuda", type=bool, default=True, help="whether to use cuda if available")
 opt = parser.parse_args()
-opt.use_cuda = False
 print(opt)
 
 cuda = torch.cuda.is_available() and opt.use_cuda

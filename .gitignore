@@ -1,2 +1,7 @@
 data
 config/yolov3.weights
+presentation/build/main.aux
+presentation/build/main.fdb_latexmk
+presentation/build/main.fls
+presentation/build/main.log
+presentation/build/main.pdf

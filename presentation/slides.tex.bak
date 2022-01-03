@@ -1,0 +1,199 @@
+% File name: slides.tex
+% Date:      2020/12/08
+% Author:    Josef Zelinka 
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Traversability Assessment}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.5\textwidth}
+         \begin{itemize}
+            \item Assign value of \textbf{cost} to difficulty of traversing given terrain
+            \item Used to \textbf{improve future path-planning} decisions
+            \item Approaches:
+            \begin{itemize}
+               \item Values of cost described as
+               \begin{itemize}
+                  \item Discrete classifier
+                  \item Continuous score
+               \end{itemize}
+               \item Sensing
+               \begin{itemize}
+                  \item Exteroceptive (LiDAR, camera)
+                  \item Proprioceptive (sensors measuring internal properties)
+               \end{itemize}
+            \end{itemize}
+         \end{itemize}
+      \end{column}
+      \begin{column}[T]{0.49\textwidth}
+         \begin{figure}
+            \begin{center}
+               \includegraphics[width=\linewidth]{crop_em.jpg}
+            \end{center}
+         \end{figure}
+      \end{column}
+   \end{columns}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Transfer Learning}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.44\textwidth}
+         \begin{itemize}
+            \item \textbf{Exchange of knowledge} between two domains
+            \item \textbf{Difference} in perception or build yields the need for \textbf{heterogeneous} transfer learning
+            % \item \textbf{Different} domains = transfer learning in \textbf{heterogeneous} team
+            \item\textbf{Benefits:}
+            \begin{itemize}
+               \item Improve performance on given task thanks to transfered knowledge
+               \item Reduce costly data collection
+            \end{itemize}
+         \end{itemize}
+      \end{column}
+      \begin{column}[T]{0.55\textwidth}
+         \begin{figure}
+            \begin{center}
+               \includegraphics[width=\linewidth]{pres-schema-crop.pdf}
+            \end{center}
+            \parbox{\textwidth}{\tiny {\color{ctu4blue}J. Zelinka, M. Prágr, R. Szadkowski, J. Bayer, J. Faigl}: \textit{Traversability Transfer Learning Between Robots with Different Cost Assessment Policies}, {\color{ctu4blue}MESAS}, 2021.}
+         \end{figure}
+      \end{column}
+   \end{columns}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+% \begin{frame}
+%    \frametitle{Progress}
+%    % Outline the next slides.
+%    % This is there to keep the audience informed about my folowing steps.
+%    % Have to come up with some nice of the slide name.
+%    \begin{columns}[t, onlytextwidth]
+%       \begin{column}[T]{0.5\textwidth}
+%          \textbf{Past}
+%          \begin{itemize}
+%             \item Probabilistic approach
+%             \item Varying cost assessment policies
+%          \end{itemize}
+%          \textbf{Present}
+%          \begin{itemize}
+%             \item Incremental approach
+%          \end{itemize}
+%       \end{column}
+%       \begin{column}[T]{0.49\textwidth}
+%       \end{column}
+%    \end{columns}
+% \end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Contributions}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.50\textwidth}
+         \textbf{\color{ctu4blue}Probabilistic approach}
+         \begin{itemize}
+            \item Datasets collected by robots with modified morpohologies
+            \item Cost classified into two discrete categories
+            \item Artificial terrains represented using color descriptors
+            \item \textbf{Clustering} used to match similar terrains between robots
+            \item \textbf{Bayesian theorem} utilized to assemble the transfer learning framework
+            % \item \textbf{Result:} \emph{Transfer learning enhanced cost predictions}
+         \end{itemize}
+      \end{column}
+      \begin{column}[T]{0.49\textwidth}
+         \textbf{\color{ctu4blue}Varying cost assessment policies}
+         \begin{itemize}
+            \item Difference in perception simulated by varying cost assessment policies
+            \item Dataset collection in \textbf{natural environment}
+            \item Models for cost and terrain perception created using \textbf{convolutional neural networks}
+            \item Transfer relation based on \textbf{correlation} on passes through similar terrain
+         \end{itemize}
+      \end{column}
+   \end{columns}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Collection Site in Bull Rock Cave}
+   \centering
+   \includegraphics[width=0.85\linewidth]{mapy_trik_cropped.png}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Collection Site in Bull Rock Cave}
+   \centering
+   \includegraphics[width=\linewidth]{byci_skala_explained.png}
+\end{frame}
+
+
+
+% - frame -----------------------------------------------------------------
+% \begin{frame}
+%    \frametitle{Probabilistic approach}
+%    \begin{columns}[t, onlytextwidth]
+%       \begin{column}[T]{0.54\textwidth}
+%          \begin{itemize}
+%             \item Discrete cost assessments
+%             \item Artificial terrains with specific colors 
+%             \item \textbf{Clustering} used to match similar terrains between robots
+%             \item \textbf{Bayesian theorem }utilized to transfer the knowledge
+%             \item \textbf{Result:} \emph{Transfer learning enhanced cost predictions}
+%          \end{itemize}
+%       \end{column}
+%       \begin{column}[T]{0.45\textwidth}
+%          \begin{figure}
+%             \begin{center}
+%                \includegraphics[width=\linewidth]{hexapod_photo_cropped.jpg}
+%             \end{center}
+%          \end{figure}
+%       \end{column}
+%    \end{columns}
+% \end{frame}
+
+% - frame -----------------------------------------------------------------
+% \begin{frame}
+%    \frametitle{Varying cost assessment policies}
+%    \begin{columns}[t, onlytextwidth]
+%       \begin{column}[T]{0.54\textwidth}
+%          \begin{itemize}
+%             \item Heterogeneity simulated using varying cost assessment policies
+%             \item Dataset collection in \textbf{natural environment}
+%             \item Models for cost and terrain perception created using \textbf{neural networks}
+%             \item \textbf{Correlation} on passes through similar terrain used to assess relation between models
+%          \end{itemize}
+%       \end{column}
+%       \begin{column}[T]{0.45\textwidth}
+%          \begin{figure}
+%             \begin{center}
+%                \includegraphics[width=\linewidth]{hexapod_in_bull_rock.jpg}
+%             \end{center}
+%          \end{figure}
+%       \end{column}
+%    \end{columns}
+% \end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Current Work: Incremental Approach}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.40\textwidth}
+         \begin{itemize}
+            \item Utilize \textbf{heterogeneous robots}
+            \item Learned model of one robot's policy is \textbf{directly transfered} to another
+            \item During the training phase the student repeatedly \textbf{compares} his true perceived cost with the policy's assessment
+            \item The comparisson helps the student to \textbf{incrementally imporove} his policy
+            % \item The receiving robot \textbf{compares} his experience with the terrain with the received assessment to \textbf{incrementally build} his model
+            % \item Possibility to achieve \textbf{online transfer learning}
+            % \item Using the interactions with the terrain robot incrementally \textbf{builds} his \textbf{cost assessment model}
+         \end{itemize}
+      \end{column}
+      \begin{column}[T]{0.59\textwidth}
+         \begin{figure}
+            \begin{center}
+               \includegraphics[width=0.65\linewidth, angle=-90]{incremental-arch.pdf}
+            \end{center}
+         \end{figure}
+      \end{column}
+   \end{columns}
+\end{frame}

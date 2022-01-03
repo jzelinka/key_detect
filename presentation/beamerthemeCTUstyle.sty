@@ -1,0 +1,129 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\definecolor{ctu4blue}{rgb}{0.0781, 0.4688, 0.7773} %#1478c
+
+%delete navigation buttons
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\pgfdeclareimage[height=1cm]{ctu}{logo/logo_cvut_en}
+\pgfdeclareimage[height=0.6cm]{aic}{logo/aic}
+%\logo{\vspace{0em}\pgfuseimage{aic}~~~~}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{title page}{texsx}[1][]
+{
+  \vskip-40pt
+    \includegraphics[width=80pt]{logo/logo_cvut_en}\hfill{}
+    \raisebox{10pt}{\includegraphics[width=100pt]{logo/aic}}
+    \vspace{30pt}
+
+   \begin{centering}
+     {\usebeamerfont{title}{\color{ctu4blue}\bf\inserttitle\par}}%
+     \vskip0.7cm%
+      \usebeamerfont{author}\insertauthor%
+     \vskip0.7cm
+       {\small
+       \Institute\par
+     \vskip0.1cm
+       }
+   \end{centering}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Headline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{headline}{fg=white,bg=ctu4blue}
+{
+    \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth, 1.1);
+    \ifnum\thepage>1\relax%
+    \fill[color=ctu4blue] (0,0) rectangle (\the\paperwidth,1.1);
+        \node[anchor=east] at (\the\paperwidth, 0.55) {\pgfuseimage{ctu}};
+        \node[anchor=west] at (0.25,0.5) {\parbox[]{0.75\paperwidth}{\begin{flushleft}
+          \usebeamerfont{title}\color{white}{\bf\inserttitle}
+        \end{flushleft}
+              }};
+    \fi
+    \end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Footline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{footline}{}{
+    \leavevmode%
+    \hbox{%
+    \ifnum\thepage>1\relax%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{author in head/foot}%
+          \usebeamerfont{author in head/foot}\hspace{2ex}{\bf \color{ctu4blue}\tiny \insertshortauthor}\hspace{2ex}
+          \hfill{}\usebeamerfont{title in head/foot}{\bf \tiny \FootLineRight \quad \insertframenumber/\inserttotalframenumber \quad}
+        \end{beamercolorbox}%
+    \fi
+    }%
+    \vskip7pt%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Frame title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+    \vspace{-0.4cm}
+    \begin{center}
+        \usebeamerfont{frametitle} \insertframetitle
+    \end{center}
+    \vskip-0.8cm
+}
+
+
+% Settings
+%\setbeamercolor*{title page header}{fg=white}
+%\setbeamercolor*{author}{fg=white}
+%\setbeamercolor*{date}{fg=white}
+%
+\setbeamerfont{title}{size={\fontsize{11.5pt}{14pt}}}
+
+\setbeamercolor{title}{fg=black}
+
+\setbeamercolor{frametitle}{fg=ctu4blue}
+\setbeamerfont{frametitle}{series=\bf}
+
+\setbeamercolor{author in head/foot}{fg=black}
+\setbeamercolor{institute in head/foot}{fg=black}
+\setbeamercolor{date in head/foot}{fg=black}
+
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[square]
+\setbeamertemplate{itemize subsubitem}[triangle]
+\setbeamercolor{itemize item}{fg=ctu4blue}
+\setbeamercolor{itemize subitem}{fg=ctu4blue}
+\setbeamercolor{itemize subsubitem}{fg=ctu4blue}
+\setbeamercolor{enumerate item}{fg=ctu4blue}
+\setbeamercolor{enumerate subitem}{fg=ctu4blue}
+
+\setbeamertemplate{sections/subsections in toc}[square]
+
+
+\setlength{\leftmargini}{5pt}
+\setlength{\leftmarginii}{14pt}
+\setlength{\leftmarginiii}{10pt}
+
+%Set Technika font as the main font
+\RequirePackage{fontspec}
+\usefonttheme[onlymath]{serif} %for nice equations
+\setsansfont[
+  BoldFont={Technika-Regular},
+  ItalicFont={Technika-LightItalic},
+  BoldItalicFont={Technika-Italic}
+]{Technika-Light}
+\mode<all>
+

@@ -1,0 +1,71 @@
+\documentclass[aspectratio=169]{beamer}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\usepackage{transparent}
+
+\graphicspath{{./fig/}}
+
+\usepackage{bibentry}
+\nobibliography*
+
+% pseudocode
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\algnewcommand{\Inputs}[1]{%
+  \State \textbf{Input:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+
+\algnewcommand{\Outputs}[1]{%
+  \State \textbf{Output:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+
+\usepackage{siunitx}
+
+\author[H. Zamazal, J. Zelinka]{Josef Zelinka, H. Zamazal}
+\title{Detekce kláves klávesnice}
+\date{\today}
+\newcommand{\ComRob}{Computational Robotics Laboratory}
+\newcommand{\AIC}{Artificial Intelligence Center}
+\newcommand{\CRAS}{Center for Robotics and Autonomous Systems}
+\newcommand{\FEE}{Faculty of Electrical Engineering}
+\newcommand{\CTU}{Czech Technical University in Prague}
+\newcommand{\Institute}{%
+\vspace{0.25em}
+   {\bf \ComRob}\\ 
+\vspace{0.25em}
+   {\bf \AIC}\\ 
+\vspace{0.25em}
+{\FEE}\\
+\vspace{0.25em}
+{\CTU}
+}
+
+\newcommand{\FootLineLeft}{\hspace*{0.3em}\ComRob}
+\newcommand{\FootLineRight}{\texttt{https://comrob.fel.cvut.cz}}
+
+\newcommand{\disable}[1]{}
+
+
+\usetheme{CTUstyle}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\input{slides}
+\end{document}

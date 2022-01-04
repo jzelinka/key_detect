@@ -85,6 +85,7 @@ def detect(rawImage, show=False):
         im0 = annotator.result()
         cv2.imshow("Image with detected boys", im0)
         cv2.waitKey()
+        cv2.imwrite("presentation/fig/detect60.png", im0)
     return keys
 
 def getPointsFromBboxes(keys):
@@ -105,6 +106,7 @@ def showKeys(image, keys):
         image =cv2.circle(image, keys[key], radius=5, color=(0,0,255), thickness=4)
     cv2.imshow("Key points", image)
     cv2.waitKey()
+    #cv2.imwrite("OutputImages/postErr.png", image)
 
 def fixKeys(detectedPts):
     keys = fixLine(detectedPts, line1)
@@ -112,8 +114,10 @@ def fixKeys(detectedPts):
     keys = fixEnd(keys, line1)
     keys = fixLine(keys, line2)
     keys = fixStart(keys, line2)
+    keys = fixEnd(keys, line2)
     keys = fixLine(keys, line3)
     keys = fixStart(keys, line3)
+    keys = fixEnd(keys, line3)
     return keys
 
 def fixStart(detectedPts, line):
@@ -256,7 +260,7 @@ if __name__ == "__main__":
     image = cv2.imread(path)
     keys = detect(image, True)
     keys = getPointsFromBboxes(keys)
-    showKeys(image, keys)
+    #showKeys(image, keys)
     keys = fixKeys(keys)
     showKeys(image, keys)
     print("End")

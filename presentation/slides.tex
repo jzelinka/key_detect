@@ -47,9 +47,8 @@
          \begin{itemize}
             \item Použita základní architektura \textbf{YOLOv5}, která umožnila detekovat více objektů najednou
             \parbox{\textwidth}{\tiny {\color{ctu4blue}Nelson J.}: \url{https://www.youtube.com/watch?v=MdF6x6ZmLAY}.}
-% \parbox{\textwidth}{\tiny {\color{ctu4blue}Faigl J., Hollinger G.}: \textit{Unifying Multi-Goal Path Planning for Autonomous Data Collection}, {\color{ctu4blue}IROS}, 2014, 2937--2942.}
+            \item Konfigurace \textbf{s} (small) vhodná pro rychlé trénování
             \item Trénování proběhlo v \textbf{Google Colab}
-            \item Nejlepších parametrů klasifikace bylo dosaženo s velmi \textbf{augmentovaným} datasetem a \textbf{1100} epochami
          \end{itemize}
       \end{column}
       \begin{column}[T]{0.55\textwidth}
@@ -61,14 +60,25 @@
 
 % - frame -----------------------------------------------------------------
 \begin{frame}
-   \frametitle{Výsledky 1}
-   
-	TODO: přidat grafíky a číselné výsledky
+   \frametitle{Průběh trénování}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.44\textwidth}
+      \begin{itemize}
+         \item Nejlepších parametrů klasifikace bylo dosaženo s velmi \textbf{augmentovaným} datasetem a \textbf{1100} epochami
+      \end{itemize}
+         \centering
+         \includegraphics[width=\linewidth]{map.pdf}
+      \end{column}
+      \begin{column}[T]{0.55\textwidth}
+         \centering
+         \includegraphics[width=\linewidth]{confusion_matrix_1100.png}
+      \end{column}
+   \end{columns}
 \end{frame}
 
 % - frame -----------------------------------------------------------------
 \begin{frame}
-   \frametitle{Výsledky 2}
+   \frametitle{Detekce}
    \begin{columns}[t, onlytextwidth]
       \begin{column}[T]{0.5\textwidth}
          \begin{figure}[h]

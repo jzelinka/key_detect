@@ -84,7 +84,7 @@ def detect(rawImage, show=False):
 
         im0 = annotator.result()
         cv2.imshow("Image with detected boys", im0)
-        cv2.waitKey()
+        cv2.waitKey(10000)
         cv2.imwrite("presentation/fig/detect60.png", im0)
     return keys
 
@@ -105,7 +105,7 @@ def showKeys(image, keys):
     for key in keys:
         image =cv2.circle(image, keys[key], radius=5, color=(0,0,255), thickness=4)
     cv2.imshow("Key points", image)
-    cv2.waitKey()
+    cv2.waitKey(10000)
     #cv2.imwrite("OutputImages/postErr.png", image)
 
 def fixKeys(detectedPts):
@@ -254,13 +254,18 @@ def getAvgVertD(detectedPts, line):
             break
     return sum/tot
 
-if __name__ == "__main__":
-    check_requirements(exclude=('tensorboard', 'thop'))
-    path = 'TestImages/keybTest8.png'
-    image = cv2.imread(path)
+def detectKeyboard(image):
     keys = detect(image, True)
+    print("Got out")
     keys = getPointsFromBboxes(keys)
     #showKeys(image, keys)
     keys = fixKeys(keys)
     showKeys(image, keys)
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    check_requirements(exclude=('tensorboard', 'thop'))
+    path = 'TestImages/keybTest22.png'
+    image = cv2.imread(path)
+    detectKeyboard(image)
     print("End")

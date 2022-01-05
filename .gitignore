@@ -256,3 +256,8 @@ fabric.properties
 /keyboard_detection-9/
 /TestImages/
 presentation/slides.tex
+/presentation/main.aux
+/presentation/main.nav
+/presentation/main.out
+/presentation/main.snm
+/presentation/main.toc

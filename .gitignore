@@ -261,3 +261,4 @@ presentation/slides.tex
 /presentation/main.out
 /presentation/main.snm
 /presentation/main.toc
+__pycache__/**

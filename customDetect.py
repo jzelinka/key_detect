@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+import argparse
 
 import cv2
 import torch
@@ -83,9 +84,10 @@ def detect(rawImage, show=False):
             annotator.box_label(Bbox, label, color=colors(names.index(key), True))
 
         im0 = annotator.result()
-        cv2.imshow("Image with detected boys", im0)
+
+        print("Keys detected.")
+        cv2.imshow("Detected keys:", im0)
         cv2.waitKey(10000)
-        cv2.imwrite("presentation/fig/detect60.png", im0)
     return keys
 
 def getPointsFromBboxes(keys):
@@ -256,16 +258,23 @@ def getAvgVertD(detectedPts, line):
 
 def detectKeyboard(image):
     keys = detect(image, True)
-    print("Got out")
     keys = getPointsFromBboxes(keys)
-    #showKeys(image, keys)
+    print("Keys augmented.")
     keys = fixKeys(keys)
     showKeys(image, keys)
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--path', type=str, default='data/test/key22.jpg', help='Image path')
+    opt = parser.parse_args()
+
+    path = opt.path
+    if not os.path.isfile(path):
+        print("Error: Image file not found, please add an existing file.")
+        exit()
+
     check_requirements(exclude=('tensorboard', 'thop'))
-    path = 'TestImages/keybTest22.png'
     image = cv2.imread(path)
     detectKeyboard(image)
     print("End")
